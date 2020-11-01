@@ -1,42 +1,30 @@
 package com.example.dietetyk.diet;
 
+import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
-public class Diet {
+@Table(name = "diets")
+public class Diet implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String calories;
-    private String type;
-
-    public Diet( String calories, String type ) {
-        this.calories = calories;
-        this.type = type;
-    }
-
-    public Diet() {
-    }
-
-    public String getCalories() {
-        return calories;
-    }
-
-    public void setCalories( String calories ) {
-        this.calories = calories;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType( String type ) {
-        this.type = type;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "diet_id")
+	private long id;
+	@Column(name = "calories", nullable = false)
+	private int calories;
+	@Column(length = 45, unique = true)
+	private String type;
 }
