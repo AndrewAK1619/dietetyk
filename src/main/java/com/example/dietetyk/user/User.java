@@ -1,18 +1,27 @@
 package com.example.dietetyk.user;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.example.dietetyk.user.role.UserRole;
 
 import lombok.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
@@ -30,4 +39,7 @@ public class User implements Serializable {
 	private String email;
 	@Column(nullable = false)
 	private String password;
+	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, 
+			fetch = FetchType.EAGER)
+	private Set<UserRole> roles = new HashSet<>();
 }
