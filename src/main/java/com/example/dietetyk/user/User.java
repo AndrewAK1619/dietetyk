@@ -39,7 +39,7 @@ public class User implements Serializable {
 	private String email;
 	@Column(nullable = false)
 	private String password;
-	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, 
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, 
 			fetch = FetchType.EAGER)
 	private Set<UserRole> roles = new HashSet<>();
 }
