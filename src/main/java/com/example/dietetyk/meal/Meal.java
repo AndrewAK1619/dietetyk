@@ -18,4 +18,10 @@ public class Meal implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "meal_id")
     private long id;
+    @Column(name = "type")
+    private String type;
+    @Column(name ="calories")
+    private int calories;
+
+
 }

@@ -11,3 +11,4 @@ INSERT INTO users(user_id, email, first_name, last_name, password) VALUES
 INSERT INTO users_roles(user_user_id, roles_id) VALUES
   (1, 2),
   (2, 1);
+

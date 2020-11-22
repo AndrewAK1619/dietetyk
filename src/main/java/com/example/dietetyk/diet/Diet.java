@@ -24,7 +24,7 @@ public class Diet implements Serializable {
 	@Column(name = "diet_id")
 	private long id;
 	@Column(name = "calories", nullable = false)
-	private int calories;
+	private int integer;
 	@Column(length = 45, unique = true)
 	private String type;
 }
