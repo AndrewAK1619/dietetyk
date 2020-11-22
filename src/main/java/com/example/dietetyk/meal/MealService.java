@@ -26,9 +26,6 @@ public class MealService {
                 .findById(id)
                 .map(mealMapper::mealToMealDto);
     }
-
-
-
     public List<Meal> findAll() {
         return mealRepository.findAllByOrderByIdAsc();
     }
