@@ -1,0 +1,63 @@
+html {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+li {
+  line-height: 40px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+li:nth-child(even) {
+  background-color: #eee;
+}
+li:nth-child(odd) {
+  background-color: #ccc;
+}
+                              /*concerns Login.js*/
+/*Login-button styles*/
+#login-button{
+  -webkit-appearance:  none; 
+  width:  auto;
+  min-width:  60px;
+  border-radius:  24px; 
+  text-align:  center; 
+  padding:  13px 35px;
+  margin-top:  20px; 
+  background-color: #a5be00 ; 
+  color: #fff; 
+  font-size:  12px;
+  margin-left:  auto; 
+  font-weight:  500; 
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13); 
+  border:  none;
+  transition:  all .3s ease; 
+  outline: 0;
+  text-transform: uppercase; 
+}
+#login-button:hover{
+  transform:  translateX(+3px);
+  box-shadow:  0 2px 6px -1px rgba(#a5be00, .65);
+}
+/*Login-button styles*/
+
+/*Login-Form styles*/
+#log-form{
+  height: 300px;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  background: #EFEFEF;
+  font-family: 'Nunito Sans';
+  border-radius: 4px;
+  font-weight: bold;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
+}
+/*Login-Form styles*/
