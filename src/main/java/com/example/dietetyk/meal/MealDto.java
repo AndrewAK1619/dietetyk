@@ -12,7 +12,7 @@ import lombok.Setter;
 public class MealDto {
 
 	private Long id;
-	private String type;
+	private String kind;
 	private int calories;
 
 }

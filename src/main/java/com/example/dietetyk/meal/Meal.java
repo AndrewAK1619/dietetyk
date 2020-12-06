@@ -19,7 +19,7 @@ public class Meal implements Serializable {
     @Column(name = "meal_id")
     private long id;
     @Column(name = "type")
-    private String type;
+    private String kind;
     @Column(name ="calories")
     private int calories;
 

@@ -1,15 +1,14 @@
 package com.example.dietetyk.meal;
 
 
-import com.example.dietetyk.user.UserDto;
-import com.example.dietetyk.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -24,10 +23,23 @@ public class MealController {
     }
 
     @GetMapping("")
-    public List<Meal> findAll() {
+    public List<MealDto> findAll() {
         return mealService.findAll();
     }
 
+
+    @PostMapping("")
+    public ResponseEntity<?> save ( @RequestBody MealDto meal) {
+        if (meal.getId() != null)
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Saving object can't have setted id");
+
+        MealDto savedMeal  = mealService.save(meal);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}").buildAndExpand(savedMeal.getId()).toUri();
+        return ResponseEntity.created(location).body(savedMeal);
+
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<MealDto> findById( @PathVariable Long id) {
