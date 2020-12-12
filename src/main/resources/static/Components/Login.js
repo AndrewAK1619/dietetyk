@@ -1,5 +1,7 @@
+
+
 const loginStyle = {
-    height: "300px",
+    height: "400px",
     textAlign: "center",
     width: "500px",
     margin: "0 auto",
@@ -24,13 +26,13 @@ const formField = {
 const leftDivStyle = {
     float: "left",
     width: "100px",
-    height: "300px",
+    height: "400px",
     background: "#a5be00",
     borderRadius: "1em 0 0 1em",
 }
 
 const formStyling = {
-    paddingTop: "",
+    paddingTop: "10px",
 }
 
 const loginButtonStyling = {
@@ -52,20 +54,36 @@ const loginButtonStyling = {
     }
 }
 
+const registrationLineStyling = {
+    fontSize: "10px",
+    textAlign: "right",
+    marginTop: "50px",
+    hover: {
+        cursor: "pointer"
+    }
+}
+
 class Login extends React.Component {
 
     state = {
         isFormSubmitted: '',
         login: '',
-        password: ''
+        password: '',
+        registration: false,
     }
 
 
 
     formPost = () => {
+
+        const user = {
+            login: this.state.login,
+            password: this.state.password,
+        }
+       
         try{
 
-            let result = fetch('https://webhook.site/3b9b7b2b-1d64-4469-892c-3b195109c0da', {
+            let result = fetch('https://webhook.site/4a48f99b-3f4d-42ad-a749-47e68ba55606', {
                 method: 'post',
                 mode: 'no-cors',
                 headers: {
@@ -73,8 +91,7 @@ class Login extends React.Component {
                     'Content-type': 'application/json',
                 },
                 body: JSON.stringify({
-                    login: this.state.login,
-                    password: this.state.password,
+                    user
                 })
             });
 
@@ -95,25 +112,41 @@ class Login extends React.Component {
             password: e.target.value,
         })
     }
+
+    moveToRegistration = () => {
+        this.setState({
+            registration: true,
+        })
+    }
     
 
      render(){
-         return(
-             <form>
-                 <div id="log-form" style={loginStyle} id="main">
-
-                 <div style={leftDivStyle} id="left"></div>
-                 <div id="right">
-                 <div  style={formStyling} id="login-form">
-                              <h1>eDietetyk</h1>
-                              <input style={formField} onChange={this.loginData} type="text" name="email" placeholder="Email"></input><br/>
-                              <input style={formField} onChange={this.passwordData} type="text" name="password" placeholder="Hasło"></input><br/>
-                              <button id="login-button" type="button" onClick={this.formPost}>Zaloguj</button>
-                          </div>
-                 </div>
-                 </div>  
-             </form>
-         );
+         if(this.state.registration === false){
+            return(
+                <>
+                <form>
+                    <div id="log-form" style={loginStyle} id="main">
+   
+                    <div style={leftDivStyle} id="left"></div>
+                    <div id="right">
+                    <div  style={formStyling} id="login-form">
+                                 <h1>eDietetyk</h1>
+                                 <input style={formField} onChange={this.loginData} type="text" name="email" placeholder="Email"></input><br/>
+                                 <input style={formField} onChange={this.passwordData} type="text" name="password" placeholder="Hasło"></input><br/>
+                                 <button id="login-button" type="button" onClick={this.formPost}>Zaloguj</button>
+                             </div>
+                             <button id="login-button" type="button" onClick={this.moveToRegistration}>Rejestracja</button>
+                    </div>
+                    </div>  
+                </form>
+                
+                </>
+            );
+         }else{
+             return(
+                <Registration/>
+             );
+         }
      }
 
 }
