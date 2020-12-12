@@ -83,7 +83,7 @@ class Login extends React.Component {
        
         try{
 
-            let result = fetch('https://webhook.site/4a48f99b-3f4d-42ad-a749-47e68ba55606', {
+            let result = fetch('/account/login', {
                 method: 'post',
                 mode: 'no-cors',
                 headers: {

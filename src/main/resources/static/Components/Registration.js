@@ -1,5 +1,3 @@
-const { default: Axios } = require("axios")
-
 const registrationStyle = {
     height: "500px",
     textAlign: "center",
@@ -70,9 +68,8 @@ class Registration extends React.Component {
 
     formPost = () => {
 
-        Axios.post()
 
-        /*try{
+        try{
 
             let result = fetch('/account/login', {
                 method: 'post',
@@ -84,6 +81,10 @@ class Registration extends React.Component {
                 body: JSON.stringify({
                     login: this.state.login,
                     password: this.state.password,
+                    name: this.state.name,
+                    surname: this.state.surname,
+                    repassword: this.state.password,
+                    email: this.state.email,
                 })
             });
 
@@ -91,7 +92,7 @@ class Registration extends React.Component {
 
         } catch(e){
 
-        }*/
+        }
     }
 
     registrationData = (e) => {
