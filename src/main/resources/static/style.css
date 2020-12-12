@@ -18,8 +18,8 @@ li:nth-child(odd) {
 #login-button{
   -webkit-appearance:  none; 
   width:  auto;
-  min-width:  60px;
-  border-radius:  24px; 
+  width:  150px;
+  border-radius: 24px; 
   text-align:  center; 
   padding:  13px 35px;
   margin-top:  20px; 
