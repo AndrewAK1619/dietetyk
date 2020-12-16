@@ -1,3 +1,4 @@
+import {axios} from 'axios';
 const registrationStyle = {
     height: "500px",
     textAlign: "center",
@@ -64,15 +65,14 @@ class Registration extends React.Component {
                 method: 'post',
                 mode: 'no-cors',
                 headers: {
-                    'Accept': 'aplication/json',
-                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'Content-type': 'application/x-www-form-urlencoded',
                 },
                 body: JSON.stringify({
-                    login: this.state.login,
                     password: this.state.password,
                     name: this.state.name,
                     surname: this.state.surname,
-                    email: this.state.email,
+                    userEmail: this.state.email,
                 })
             });
             console.log('Result:' + result);

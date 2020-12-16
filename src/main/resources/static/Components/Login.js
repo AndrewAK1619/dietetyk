@@ -69,7 +69,10 @@ class Login extends React.Component {
             let result = fetch('/account/login', {
                 method: 'post',
                 mode: 'no-cors',
-                headers: {'Content-type': 'application/json'},
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/x-www-form-urlencoded',
+                },
                 body: JSON.stringify({
                     emailUser,
                     password
