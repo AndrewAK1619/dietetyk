@@ -1,4 +1,3 @@
-import {axios} from 'axios';
 const registrationStyle = {
     height: "500px",
     textAlign: "center",
