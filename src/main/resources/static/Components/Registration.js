@@ -59,22 +59,21 @@ class Registration extends React.Component {
         isValid: false,
     }
     formPost = () => {
-        let userEmail = this.state.email;
-        let surname = this.state.surname;
+        let email = this.state.email;
+        let lastName = this.state.surname;
         let password = this.state.password;
-        let name = this.state.name;
+        let firstName = this.state.name;
     try{
         let result = fetch('/account/register', {
             method: 'post',
-            mode: 'no-cors',
             headers: {
-                'Content-type': 'application/x-www-form-urlencoded',
+                'Content-type': 'application/json;charset=utf-8',
             },
             body: JSON.stringify({
                 password,
-                name,
-                surname,
-                userEmail,
+                firstName,
+                lastName,
+                email,
             })
         }).then(response => response.json()).then(() =>
         console.log('Result:' + result))
