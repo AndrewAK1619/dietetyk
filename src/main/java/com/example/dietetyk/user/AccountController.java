@@ -31,15 +31,18 @@ public class AccountController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
 					"The object being saved cannot be overwritten with an existing ID");
 		UserDto savedUser = userService.save(user);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/success/{id}").buildAndExpand(savedUser.getId())
+		URI location = ServletUriComponentsBuilder
+				.fromCurrentRequest()
+				.path("/success/{id}")
+				.buildAndExpand(savedUser.getId())
 				.toUri();
 		return ResponseEntity.created(location).body(savedUser);
 	}
 
 	@GetMapping("/register/success/{id}")
 	public ResponseEntity<UserDto> findById(@PathVariable Long id) {
-		return userService.findById(id).map(ResponseEntity::ok)
+		return userService.findById(id)
+				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
 	}
 }
