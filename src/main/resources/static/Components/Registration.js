@@ -59,6 +59,29 @@ class Registration extends React.Component {
         isValid: false,
     }
     formPost = () => {
+        let userEmail = this.state.email;
+        let surname = this.state.surname;
+        let password = this.state.password;
+        let name = this.state.name;
+    try{
+        let result = fetch('/account/register', {
+            method: 'post',
+            mode: 'no-cors',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                password,
+                name,
+                surname,
+                userEmail,
+            })
+        }).then(response => response.json()).then(() =>
+        console.log('Result:' + result))
+    }catch(e){
+    }
+}
+    /*formPost = () => {
         try{
             let result = fetch('/account/register', {
                 method: 'post',
@@ -77,7 +100,7 @@ class Registration extends React.Component {
             console.log('Result:' + result);
         } catch(e){
         }
-    }
+    }*/
     registrationData = (e) => {
         this.setState({
             [e.target.name]: e.target.value
