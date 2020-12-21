@@ -1,6 +1,11 @@
-html {
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);
+html, body {
   font-size: 20px;
   font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 li {
   line-height: 40px;
@@ -80,3 +85,123 @@ li:nth-child(odd) {
 box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
 }
 /*Login-Form styles*/
+
+/*Admin.js styles*/
+#father{
+  height: 100%;
+}
+#side-menu{
+  width: 15%;
+  height: 100vh;
+  background-color: ivory;
+  float:left;
+}
+#main-panel{
+  background-color: #D3EF9A;
+  height: 100vh;
+  overflow: hidden;
+}
+header{
+  height: 10vh;
+  position: relative;
+}
+#app-name{
+  float: left;
+  height: 10vh;
+  font-family: raleway;
+  margin-left: 50px;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+#app-name span{
+  height: 10vh;
+  line-height: 10vh;
+  white-space: nowrap;
+  color: ivory;
+  -webkit-text-stroke: 2px #77914a;
+}
+#settings-panel{
+  float:right;
+  margin-right: 50px;
+}
+#settings-panel span{
+  height: 10vh;
+  line-height: 10vh;
+  white-space: nowrap;
+  color: #77914a;
+  background-color: ivory;
+  padding: 7px;
+  border-radius: 4px;
+}
+#settings-panel span:hover{
+  cursor:pointer;
+  background-color: #77914a;
+  color: ivory;
+  transition: 500ms;
+}
+#user-data{
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+  background-color: ivory;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  float: right;
+  margin-right: 50px;
+}
+#user-data img{
+  width: 100%;
+  height: auto;
+}
+#logo{
+  margin: 0 auto;
+  width: 100%;
+  height: 20%;
+}
+#logo img{
+  width: 100%;
+  height: auto;
+}
+.side-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.side-menu li{
+    margin-top: 30%;
+    background-color: ivory;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color:#77914a;
+    line-height: 40px;
+}
+#working-tiles{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+.tiles{
+  margin-top:50px;
+  width: 300px;
+  height: 700px;
+  background-color: ivory;
+  display: inline-block;
+  margin-left: 20px;
+  border-radius: 7px;
+}
+.tile-name{
+  height: 10%;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top:10px;
+}
+#settings-popup{
+  width: 200px;
+  height: 300px;
+  background-color: grey;
+}
+/*Admin.js styles*/

@@ -63,24 +63,25 @@ class Login extends React.Component {
         registration: false,
     }
     formPost = () => {
-            let emailUser = this.state.login;
-            let password = this.state.password;
-        try{
-            let result = fetch('/account/login', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-type': 'application/json;charset=utf-8',
-                },
-                body: JSON.stringify({
-                    emailUser,
-                    password
-                })
-            });
-            console.log('Result:' + result);
-        } catch(e){
-        }
+        let emailUser = this.state.login;
+        let password = this.state.password;
+    try{
+        let result = fetch('/account/login', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json;charset=utf-8',
+            },
+            body: JSON.stringify({
+                emailUser,
+                password
+            })
+        });
+        console.log('Result:' + result);
+    } catch(e){
     }
+}
+
     loginData = (e) => {
         this.setState({
             login: e.target.value,
