@@ -201,7 +201,35 @@ header{
 }
 #settings-popup{
   width: 200px;
-  height: 300px;
-  background-color: grey;
+  height: 250px;
+  background-color: #77914a;
+  border-radius: 7px;
+  right:0;
+  position:absolute;
+  margin-right: 7%;
+  transition: 500ms;
+}
+#settings-menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 7px;
+}
+#settings-menu li:nth-child(1){
+  border-bottom: 1px black solid;
+}
+#settings-menu li:nth-child(2){
+  border-bottom: 1px black solid;
+}
+#settings-menu li{
+  margin-top: 10px;
+  background-color: #77914a;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color:ivory;
+  line-height: 40px;
+  font-size: 18px;
 }
 /*Admin.js styles*/
