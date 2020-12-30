@@ -1,4 +1,12 @@
 class Admin extends React.Component {
+    state = {
+        settings: false,
+    }
+    handleSettingsOpen = () => {
+        this.setState({
+            settings: !this.state.settings,
+        })
+    }
     render(){
         return(
             <>
@@ -23,10 +31,18 @@ class Admin extends React.Component {
                             <img src="img/userimage.jpg"></img>
                         </div>
                         <div id="settings-panel">
-                            <span>USTAWIENIA</span>
+                            <span onClick={this.handleSettingsOpen}>USTAWIENIA</span>
                         </div>
-                        <div id="settings-popup"></div>
+                        
                     </header>
+                    {this.state.settings == false ? <div></div> : <div id="settings-popup">
+                        <ul id="settings-menu">
+                            <li>Konto</li>
+                            <li>Diety</li>
+                            <li>Wyloguj</li>
+                        </ul>
+                    </div>}
+                    
                     <div id="working-tiles">
                             <div class="tiles">
                                 <div class="tile-name">Pacjenci</div>
