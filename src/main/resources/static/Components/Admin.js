@@ -1,10 +1,27 @@
 class Admin extends React.Component {
+    constructor(props){
+        super(props)
+        this.handleCloseButton = this.handleCloseButton.bind(this)
+    }
+    handleCloseButton = () => {
+        this.setState({
+            whichwindow: "",
+        })
+    }
     state = {
         settings: false,
+        newpatient: false,
+        whichwindow: "",
     }
     handleSettingsOpen = () => {
         this.setState({
             settings: !this.state.settings,
+        })
+    }
+
+    handleAdd = (e) => {
+        this.setState({
+            whichwindow: [e.target.id],
         })
     }
     render(){
@@ -16,8 +33,8 @@ class Admin extends React.Component {
                         <img src="img\e-dietetyk-logo.png" alt="e-Dietetyk"></img>
                     </div>
                         <ul class="side-menu">
-                            <li>Nowy pacjent</li>
-                            <li>Nowy jadłospis</li>
+                            <li onClick={this.handleAdd} id="newpatient">Nowy pacjent</li>
+                            <li onClick={this.handleAdd} id="newmenu">Nowy jadłospis</li>
                             <li>Nowy potrawa</li>
                             <li>Nowy produkt</li>
                         </ul>
@@ -42,7 +59,8 @@ class Admin extends React.Component {
                             <li>Wyloguj</li>
                         </ul>
                     </div>}
-                    
+                    {this.state.whichwindow == "newpatient" ? <AddPatient handleCloseButton={this.handleCloseButton}/> : <></>}
+                    {this.state.whichwindow == "newmenu" ? <Addmenu handleCloseButton={this.handleCloseButton}/> : <></>}
                     <div id="working-tiles">
                             <div class="tiles">
                                 <div class="tile-name">Pacjenci</div>
