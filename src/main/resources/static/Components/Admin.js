@@ -35,8 +35,8 @@ class Admin extends React.Component {
                         <ul class="side-menu">
                             <li onClick={this.handleAdd} id="newpatient">Nowy pacjent</li>
                             <li onClick={this.handleAdd} id="newmenu">Nowy jadłospis</li>
-                            <li>Nowy potrawa</li>
-                            <li>Nowy produkt</li>
+                            <li onClick={this.handleAdd} id="newmeal">Nowy potrawa</li>
+                            <li onClick={this.handleAdd} id="newproduct">Nowy produkt</li>
                         </ul>
                 </div>
                 <div id="main-panel">
@@ -60,22 +60,28 @@ class Admin extends React.Component {
                         </ul>
                     </div>}
                     {this.state.whichwindow == "newpatient" ? <AddPatient handleCloseButton={this.handleCloseButton}/> : <></>}
+                    {this.state.whichwindow == "newmeal" ? <Addmeal handleCloseButton={this.handleCloseButton}/> : <></>}
                     {this.state.whichwindow == "newmenu" ? <Addmenu handleCloseButton={this.handleCloseButton}/> : <></>}
+                    {this.state.whichwindow == "newproduct" ? <Addproduct handleCloseButton={this.handleCloseButton}/> : <></>}
                     <div id="working-tiles">
                             <div class="tiles">
                                 <div class="tile-name">Pacjenci</div>
+                                <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
                                 <div class="work-data">
 
                                 </div>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Jadłospisy</div>
+                                <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Potrawy</div>
+                                <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Produkty</div>
+                                <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
                             </div>
                         </div>
                 </div>
