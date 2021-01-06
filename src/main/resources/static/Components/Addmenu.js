@@ -1,5 +1,27 @@
 class Addmenu extends React.Component{
+    state = {
+        calories: "",
+        protein: "",
+        fat: "",
+        carbs: "",
+    }
+    handleMenuData = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        }, () => {
+            this.pcCalculator();
+        });
+    }
+    pcCalculator = () => {
+        let proteinCal = this.state.protein*4;
+        let proteinPercentage = proteinCal*4*100/this.state.calories;
+        let fatCal = this.state.protein*9;
+        let fatPercentage = fatCal*9*100/this.state.calories;
+        let carbsCal = this.state.carbs*4;
+        let carbsPercentage = carbsCal*4*100/this.state.calories;
+    }
     render(){
+
         return(
             <div id="wrapper">
                 <div id="who-for">
@@ -17,19 +39,13 @@ class Addmenu extends React.Component{
                         </div>
                         <div class="macro-data">
                             <label for="calory">KALORIE:</label>
-                            <input type="text" name="calory"></input>kcal
+                            <input type="text" name="calories" onChange={this.handleMenuData}></input>kcal
                             <label for="proteine">BIAŁKA:</label>
-                            <input type="text" name="proteine"></input>g
-                            <input type="text" name="proteine"></input>kcal
-                            <input type="text" name="proteine"></input>%
+                            <input type="text" name="protein" onChange={this.handleMenuData}></input>g = {this.state.protein*4} kcal = {(this.state.protein*4*100/this.state.calories).toFixed(2)}%
                             <label for="fat">TŁUSZCZE:</label>
-                            <input type="text" name="fat"></input>g
-                            <input type="text" name="fat"></input>kcal
-                            <input type="text" name="fat"></input>%
+                            <input type="text" name="fat" onChange={this.handleMenuData}></input>g = {this.state.fat*9} kcal = {(this.state.fat*9*100/this.state.calories).toFixed(2)}%
                             <label for="carbohydrates">WĘGLOWODANY:</label>
-                            <input type="text" name="carbohydrates"></input>g
-                            <input type="text" name="carbohydrates"></input>kcal
-                            <input type="text" name="carbohydrates"></input>%
+                            <input type="text" name="carbs" onChange={this.handleMenuData}></input>g = {this.state.carbs*4} kcal = {(this.state.carbs*4*100/this.state.calories).toFixed(2)}%
                             
                         </div>
 
