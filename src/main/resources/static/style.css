@@ -86,7 +86,7 @@ box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
 }
 /*Login-Form styles*/
 
-/*Admin.js styles*/
+/*Mainpanel.js styles*/
 #father{
   height: 100%;
 }
@@ -231,7 +231,7 @@ header{
   line-height: 40px;
   font-size: 18px;
 }
-/*Admin.js styles*/
+/*Mainpanel.js styles*/
 /*Add section*/
 .add{
   width:450px;
@@ -484,3 +484,37 @@ header{
   margin-top: 20px;
 }
 /*Add meal section*/
+/*Admin styling*/
+#admin{
+  height: 50vh;
+  width: 50vw;
+  position: relative;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 22px -1px rgba(0,0,0,0.75);
+  background-color:ivory;
+  transition: 500ms;
+  text-align: center;
+}
+.admin-input-styling{
+  width:200px;
+  height: 36px;
+  padding: 0 16px;
+  border: 2px solid #a5be00;
+  border-radius: 4px;
+  outline: 0;
+  transition: .2s;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+#admin h1{
+  margin-top:50px;
+}
+/*Admin styling*/
