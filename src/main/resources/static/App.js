@@ -2,7 +2,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <Admin/>
+      <Mainpanel/>
       </>
     );
   }

@@ -56,11 +56,21 @@ const registrationLineStyling = {
     }
 }
 class Login extends React.Component {
+    constructor(props){
+        super(props)
+        this.handleCloseButton = this.handleCloseButton.bind(this)
+    }
+    handleCloseButton = () => {
+        this.setState({
+            loggedin: "",
+        })
+    }
     state = {
         isFormSubmitted: '',
         login: '',
         password: '',
         registration: false,
+        loggedin: "admin",
     }
     formPost = () => {
         let emailUser = this.state.login;
@@ -111,10 +121,10 @@ class Login extends React.Component {
                                  <input style={formField} onChange={this.passwordData} type="password" name="password" placeholder="Hasło"></input><br/>
                                  <button id="login-button" type="button" onClick={this.formPost}>Zaloguj</button>
                              </div>
-                             <button id="login-button" type="button" onClick={this.moveToRegistration}>Rejestracja</button>
                     </div>
-                    </div>  
+                    </div> 
                 </form>
+                {this.state.loggedin == "admin" ? <Admin handleCloseButton={this.handleCloseButton}/> : <></>}
                 </>
             );
          }else{
