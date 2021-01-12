@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface MealRepository extends JpaRepository<Meal, Long> {
 
-    Optional<Meal> findMealByKind( String type);
+    Optional<Meal> findMealByName( String name);
     List<Meal> findAllByOrderByIdAsc();
 
 }

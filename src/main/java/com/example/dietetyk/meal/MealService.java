@@ -36,8 +36,8 @@ public class MealService {
 
 
     MealDto save( MealDto meal ) {
-        Optional<Meal> mealByKind = mealRepository.findMealByKind(meal.getKind());
-        mealByKind.ifPresent(u -> {
+        Optional<Meal> mealByname = mealRepository.findMealByName(meal.getName());
+        mealByname.ifPresent(u -> {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
                     "Saving object can't have setted id");
         });

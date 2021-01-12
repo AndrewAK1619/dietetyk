@@ -9,5 +9,7 @@ public class DietDto {
 
 	private long id;
 	private int calories;
-	private String type;
+	private String proteins;
+	private String fats;
+	private String carbohydrates;
 }
