@@ -70,7 +70,7 @@ class Login extends React.Component {
         login: '',
         password: '',
         registration: false,
-        loggedin: "admin",
+        loggedin: "",
     }
     formPost = () => {
         let emailUser = this.state.login;
@@ -108,7 +108,7 @@ class Login extends React.Component {
         })
     }
      render(){
-         if(this.state.registration === false){
+         if(this.state.loggedin ==""){
             return(
                 <>
                 <form>
@@ -127,10 +127,15 @@ class Login extends React.Component {
                 {this.state.loggedin == "admin" ? <Admin handleCloseButton={this.handleCloseButton}/> : <></>}
                 </>
             );
-         }else{
+         }else if(this.state.loggedin == "admin"){
              return(
-                <Registration/>
+                <Admin/>
              );
+         }
+         else if(this.state.loggedin == "user"){
+             return(
+                 <Mainpanel/>
+             )
          }
      }
 
