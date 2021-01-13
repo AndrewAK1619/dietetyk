@@ -24,7 +24,7 @@ class Addmeal extends React.Component {
             product5: this.state.product5,
         }
     try{
-        let result = fetch('/account/login', {
+        let result = fetch('/meals', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

@@ -78,10 +78,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         <div class="column">
@@ -111,10 +108,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+ 
                             </div>
                         </div>
                         <div class="column">
@@ -144,10 +138,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         <div class="column">
@@ -177,10 +168,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         <div class="column">
@@ -210,10 +198,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         <div class="column">
@@ -243,10 +228,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         <div class="column">
@@ -276,10 +258,7 @@ class Addmenu extends React.Component{
                                 </div>
                             </div>
                             <div class="day-tiles">
-                            <div class="add-product-buttons">
-                                    <button type="button">+ Produkt</button>
-                                    <button type="button">+ Potrawa</button>
-                                </div>
+
                             </div>
                         </div>
                         </div>
