@@ -12,3 +12,5 @@ INSERT INTO users_roles(user_user_id, roles_id) VALUES
   (1, 2),
   (2, 1);
 
+INSERT INTO patients(patient_id, first_name, last_name, email, sex, age, body_weight, height, degree_of_physical_activity, chronic_diseases_ailments_and_medicines_used, allergies_and_food_intolerances, supplements_used) VALUES
+  (1, 'Emily', 'Evans', 'emilyEvans@example.com', 'Female', 26, 56.5, 172, '3 - aktywność fizyczna umiarkowana', 'Brak', 'Brak', 'Brak');
