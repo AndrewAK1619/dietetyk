@@ -3,6 +3,7 @@ package com.example.dietetyk.patient;
 import java.net.URI;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class PatientController {
 
 	private PatientService patientService;
 
+	@Autowired
 	public PatientController(PatientService patientService) {
 		this.patientService = patientService;
 	}
