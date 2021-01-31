@@ -21,4 +21,8 @@ INSERT INTO units_of_measures_and_weights(unit_id, unit, symbol) VALUES
   (3, 'Gram', 'g'),
   (4, 'Litr', 'l'),
   (5, 'Centylitr', 'cl'),
-  (6, 'Mililitr', 'ml');
+  (6, 'Mililitr', 'ml'),
+  (7, 'Sztuka', 'szt');
+
+INSERT INTO products(product_id, product_name, kcal, protein, fats, carbohydrate, unit_id) VALUES
+  (1, 'Egg', 20, 2, 1, 0.1, 7);

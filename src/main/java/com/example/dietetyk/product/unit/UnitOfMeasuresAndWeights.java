@@ -37,7 +37,7 @@ public class UnitOfMeasuresAndWeights implements Serializable {
 	private String unit;
 	@Column(length = 5, nullable = false)
 	private String symbol;
-//	@OneToMany(mappedBy = "unitOfMeasuresAndWeights", 
-//			cascade = { CascadeType.REMOVE })
-//	private List<Product> products = new ArrayList<>();
+	@OneToMany(mappedBy = "unitOfMeasuresAndWeights", 
+			cascade = { CascadeType.REMOVE })
+	private List<Product> products = new ArrayList<>();
 }
