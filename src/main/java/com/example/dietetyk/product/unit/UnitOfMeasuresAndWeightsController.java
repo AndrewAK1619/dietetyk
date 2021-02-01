@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin/products/units")
 public class UnitOfMeasuresAndWeightsController {
 
-	private UnitOfMeasuresAndWeightsService measuresAndWeightsService;
+	private final UnitOfMeasuresAndWeightsService measuresAndWeightsService;
 
 	@Autowired
 	public UnitOfMeasuresAndWeightsController(
