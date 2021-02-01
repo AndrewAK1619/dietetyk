@@ -1,11 +1,24 @@
 package com.example.dietetyk.meal;
 
-import org.mapstruct.Mapper;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface MealMapper {
+@Component
+public class MealMapper {
 
-    Meal mealDtoToMeal( MealDto mealDto);
-    MealDto mealToMealDto(Meal meal);
+	private final ModelMapper mapper;
 
+	@Autowired
+	public MealMapper(ModelMapper mapper) {
+		this.mapper = mapper;
+	}
+
+	Meal mealDtoToMeal(MealDto mealDto) {
+		return mapper.map(mealDto, Meal.class);
+	};
+
+	MealDto mealToMealDto(Meal meal) {
+		return mapper.map(meal, MealDto.class);
+	};
 }

@@ -1,17 +1,40 @@
 package com.example.dietetyk.product;
 
-import org.mapstruct.DecoratedWith;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import java.util.Optional;
 
-@Mapper(componentModel = "spring")
-@DecoratedWith(ProductMapperDecorator.class)
-public interface ProductMapper {
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-	@Mapping(target = "unitOfMeasuresAndWeights", ignore = true)
-	Product productDtoToProduct(ProductDto productDto);
+import com.example.dietetyk.product.unit.UnitOfMeasuresAndWeights;
+import com.example.dietetyk.product.unit.UnitOfMeasuresAndWeightsRepository;
 
-	@Mapping(target="unit", source="unitOfMeasuresAndWeights.unit")
-	@Mapping(target="symbol", source="unitOfMeasuresAndWeights.symbol")
-	ProductDto productToProductDto(Product product);
+@Component
+public class ProductMapper {
+
+	private final ModelMapper modelMapper;
+	private final UnitOfMeasuresAndWeightsRepository unitRepository;
+
+	@Autowired
+	public ProductMapper(
+			ModelMapper modelMapper,
+			UnitOfMeasuresAndWeightsRepository unitRepository) {
+		this.modelMapper = modelMapper;
+		this.unitRepository = unitRepository;
+	}
+
+	Product productDtoToProduct(ProductDto productDto) {
+		Product entity = modelMapper.map(productDto, Product.class);
+		Optional<UnitOfMeasuresAndWeights> unit = unitRepository
+				.findByUnit(productDto.getUnit());
+		unit.ifPresent(entity::setUnitOfMeasuresAndWeights);
+		return entity;
+	};
+
+	ProductDto productToProductDto(Product product) {
+		ProductDto productDto = modelMapper.map(product, ProductDto.class);
+		productDto.setSymbol(product.getUnitOfMeasuresAndWeights().getSymbol());
+		productDto.setUnit(product.getUnitOfMeasuresAndWeights().getUnit());
+		return productDto;
+	};
 }

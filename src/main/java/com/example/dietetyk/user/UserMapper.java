@@ -1,10 +1,24 @@
 package com.example.dietetyk.user;
 
-import org.mapstruct.Mapper;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface UserMapper {
+@Component
+public class UserMapper {
 
-	User userDtoToUser(UserDto userDto);
-	UserDto userToUserDto(User user);
+	private final ModelMapper mapper;
+
+	@Autowired
+	public UserMapper(ModelMapper mapper) {
+		this.mapper = mapper;
+	}
+
+	User userDtoToUser(UserDto userDto) {
+		return mapper.map(userDto, User.class);
+	};
+
+	UserDto userToUserDto(User user) {
+		return mapper.map(user, UserDto.class);
+	};
 }
