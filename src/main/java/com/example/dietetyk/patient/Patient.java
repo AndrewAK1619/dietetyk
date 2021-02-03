@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.example.dietetyk.patient.physicalctivity.PhysicalActivity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,8 +44,9 @@ public class Patient implements Serializable {
 	@Column(name = "body_weight")
 	private float bodyWeight;
 	private float height;
-	@Column(name = "degree_of_physical_activity")
-	private String degreeOfPhysicalActivity;
+	@ManyToOne
+	@JoinColumn(name = "physical_activity_id")
+	private PhysicalActivity physicalActivity;
 	@Column(name = "chronic_diseases_ailments_and_medicines_used")
 	private String chronicDiseasesAilmentsAndMedicinesUsed;
 	@Column(name = "allergies_and_food_intolerances")
