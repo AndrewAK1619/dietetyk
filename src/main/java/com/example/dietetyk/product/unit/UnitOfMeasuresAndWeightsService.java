@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UnitOfMeasuresAndWeightsService {
 
-	private UnitOfMeasuresAndWeightsRepository measuresAndWeightsRepository;
+	private final UnitOfMeasuresAndWeightsRepository measuresAndWeightsRepository;
 
 	@Autowired
 	public UnitOfMeasuresAndWeightsService(
