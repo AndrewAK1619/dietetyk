@@ -2,10 +2,8 @@ class Admin extends React.Component {
     state = {
         username:"",
         usersurname:"",
-        userlogin:"",
         userpassword:"",
         useremail:"",
-        userphone:"",
     }
     
     handleAdmin = (e) => {
@@ -14,26 +12,22 @@ class Admin extends React.Component {
         })
     }
     formPost = () => {
-        let userName = this.state.username;
-        let userSurname = this.state.usersurname;
-        let userLogin = this.state.userlogin;
-        let userPassword = this.state.userpassword;
-        let userEmail = this.state.useremail;
-        let userPhone = this.state.userphone;
+        let firstName = this.state.username;
+        let lastName = this.state.usersurname;
+        let password = this.state.userpassword;
+        let email = this.state.useremail;
     try{
-        let result = fetch('/account/admin', {
+        let result = fetch('/account/register', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json;charset=utf-8',
             },
             body: JSON.stringify({
-                userName,
-                userSurname,
-                userLogin,
-                userPassword,
-                userEmail,
-                userPhone,
+                firstName,
+                lastName,
+                password,
+                email,
             })
         });
         console.log('Result:' + result);
@@ -45,12 +39,10 @@ class Admin extends React.Component {
             <div id="admin">
                 <div class="close-button" onClick={this.props.handleCloseButton}>&#10006;</div>
                 <h1>Utwórz użytkownika</h1>
-                <input class="admin-input-styling" onChange={this.handleAdmin} name="username" type="text"></input>
-                <input class="admin-input-styling" onChange={this.handleAdmin}  name="usersurname" type="text"></input><br/>
-                <input class="admin-input-styling" onChange={this.handleAdmin}  name="userlogin" type="text"></input>
-                <input class="admin-input-styling" onChange={this.handleAdmin}  name="userpassword" type="text"></input><br/>
-                <input class="admin-input-styling" onChange={this.handleAdmin}  name="useremail" type="text"></input>
-                <input class="admin-input-styling" onChange={this.handleAdmin}  name="userphone" type="text"></input><br/>
+                <input class="admin-input-styling" onChange={this.handleAdmin} name="username" placeholder="User name" type="text"></input>
+                <input class="admin-input-styling" onChange={this.handleAdmin}  name="usersurname" placeholder="User surname" type="text"></input><br/>
+                <input class="admin-input-styling" onChange={this.handleAdmin}  name="userpassword" placeholder="Password" type="text"></input>
+                <input class="admin-input-styling" onChange={this.handleAdmin}  name="useremail" placeholder="Email" type="text"></input><br/>
                 <button id="login-button" onClick={this.formPost} type="button">Utwórz</button>
             </div>
         )

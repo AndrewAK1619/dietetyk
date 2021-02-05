@@ -64,6 +64,7 @@ class Login extends React.Component {
         this.setState({
             loggedin: "",
         })
+        console.log("works");
     }
     state = {
         isFormSubmitted: '',
