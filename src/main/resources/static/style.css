@@ -518,3 +518,7 @@ header{
   margin-top:50px;
 }
 /*Admin styling*/
+.error-message{
+  font-size: 10px;
+  color:red;
+}
