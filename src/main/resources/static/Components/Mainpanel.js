@@ -23,6 +23,11 @@ class Mainpanel extends React.Component {
         this.setState({
             whichwindow: [e.target.id],
         })
+    
+    }
+    logout = () => {
+        localStorage.clear();
+        window.location.href = '/';
     }
     render(){
         return(
@@ -45,7 +50,7 @@ class Mainpanel extends React.Component {
                             <span>e-DIETETYK</span>
                         </div>
                         <div id="user-data">
-                            <img src="img/userimage.jpg"></img>
+                            <img src="img/user.png"></img>
                         </div>
                         <div id="settings-panel">
                             <span onClick={this.handleSettingsOpen}>USTAWIENIA</span>
@@ -56,7 +61,7 @@ class Mainpanel extends React.Component {
                         <ul id="settings-menu">
                             <li>Konto</li>
                             <li>Diety</li>
-                            <li>Wyloguj</li>
+                            <li onClick={this.logout}>Wyloguj</li>
                         </ul>
                     </div>}
                     {this.state.whichwindow == "newpatient" ? <AddPatient handleCloseButton={this.handleCloseButton}/> : <></>}

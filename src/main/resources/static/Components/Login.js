@@ -73,7 +73,8 @@ class Login extends React.Component {
         registration: false,
         loggedin: "",
     }
-        formPost = () => {
+        formPost = (e) => {
+        e.preventDefault();
         let login = this;
         let emailUser = this.state.login;
         let password = this.state.password;
@@ -122,7 +123,7 @@ class Login extends React.Component {
          if(this.state.loggedin ==""){
             return(
                 <>
-                <form>
+                <form onSubmit={this.formPost}>
                     <div id="log-form" style={loginStyle} id="main">
                     <div style={leftDivStyle} id="left"></div>
                     <div id="right">
@@ -130,7 +131,7 @@ class Login extends React.Component {
                                  <h1>eDietetyk</h1>
                                  <input style={formField} onChange={this.loginData} type="text" name="email" placeholder="Email"></input><br/>
                                  <input style={formField} onChange={this.passwordData} type="password" name="password" placeholder="Hasło"></input><br/>
-                                 <button id="login-button" type="button" onClick={this.formPost}>Zaloguj</button>
+                                 <button id="login-button" type="submit">Zaloguj</button>
                              </div>
                     </div>
                     </div> 
