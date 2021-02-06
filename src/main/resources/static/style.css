@@ -234,8 +234,8 @@ header{
 /*Mainpanel.js styles*/
 /*Add section*/
 .add{
-  width:450px;
-  height: 650px;
+  width:30vw;
+  height: 80vh;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -273,14 +273,15 @@ header{
   text-align: center;
 }
 .form-styling{
-  width:200px;
+  width:10vw;
+  margin-left:2px;
   height: 36px;
   padding: 0 16px;
   border: 2px solid #a5be00;
   border-radius: 4px;
   outline: 0;
   transition: .2s;
-  margin-top: 20px;
+  margin-top: 4vh;
 }
 .select-styling {
 	display: block;

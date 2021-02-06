@@ -7,6 +7,8 @@ class Addproduct extends React.Component {
         newProductProteins:"",
         newProductFat:"",
         newProductCarbs:"",
+        units: "",
+        productName: "",
     }
     handleProducts = (e) => {
         this.setState({
@@ -14,12 +16,12 @@ class Addproduct extends React.Component {
         })
     }
     formPost = () => {
-        let newProductCal = this.state.newProductCal;
-        let newProductProteins = this.state.newProductProteins;
-        let newProductCarbs = this.state.newProductCarbs;
-        let newProductFat = this.state.newProductFat;
+        let kcal = this.state.newProductCal;
+        let protein = this.state.newProductProteins;
+        let carbohydrate = this.state.newProductCarbs;
+        let fats = this.state.newProductFat;
     try{
-        let result = fetch('/account/login', {
+        let result = fetch('/admin/products', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -45,12 +47,12 @@ class Addproduct extends React.Component {
                 <div class="add-name">Dodaj nowy produkt</div>
                 <form class="add-form">
                     <div class="add-form-child">
-                        <input class="form-styling" type="text" placeholder="Nazwa"></input><br/>
+                        <input class="form-styling" type="text" onChange={this.handleProducts} name="productName" placeholder="Nazwa"></input><br/>
                         <input class="form-styling" type="text" onChange={this.handleProducts} name="newProductCal" placeholder="Kaloryczność"></input><br/>
                         <input class="form-styling" type="text" onChange={this.handleProducts} name="newProductProteins" placeholder="Białka"></input><br/>
                         <input class="form-styling" type="text" onChange={this.handleProducts} name="newProductFat" placeholder="Tłuszcze"></input><br/>
                         <input class="form-styling" type="text" onChange={this.handleProducts} name="newProductCarbs" placeholder="Węglowodany"></input><br/>
-                        <input class="form-styling" type="text" onChange={this.handleProducts} placeholder="Podstawowa jednostka miary"></input><br/>
+                        <input class="form-styling" type="text" onChange={this.handleProducts} name="units" placeholder="Podstawowa jednostka miary"></input><br/>
                         <button id="login-button" onClick={this.formPost} type="button">Utwórz</button>
                     </div>
                 </form>
