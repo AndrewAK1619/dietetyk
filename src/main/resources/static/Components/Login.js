@@ -89,11 +89,11 @@ class Login extends React.Component {
             })
         }).then(function(response){
             if(response.status == "404"){
-                this.setState({
+                setState({
                     loggedin: "wrong",
                 })
             }else if(response.status == "200"){
-                this.setState({
+                setState({
                     loggedin: "user",
                 })
             }
