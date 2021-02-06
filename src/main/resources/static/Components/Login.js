@@ -87,8 +87,17 @@ class Login extends React.Component {
                 emailUser,
                 password
             })
-        });
-        console.log('Result:' + result);
+        }).then(function(response){
+            if(response.status == "404"){
+                this.setState({
+                    loggedin: "wrong",
+                })
+            }else if(response.status == "200"){
+                this.setState({
+                    loggedin: "user",
+                })
+            }
+        })
     } catch(e){
     }
 }
@@ -137,6 +146,26 @@ class Login extends React.Component {
              return(
                  <Mainpanel/>
              )
+         }else if(this.state.loggedin == "wrong"){
+             return(
+                <>
+                <form>
+                    <div id="log-form" style={loginStyle} id="main">
+                    <div style={leftDivStyle} id="left"></div>
+                    <div id="right">
+                    <div  style={formStyling} id="login-form">
+                                 <h1>eDietetyk</h1>
+                                 <input style={formField} onChange={this.loginData} type="text" name="email" placeholder="Email"></input><br/>
+                                 <input style={formField} onChange={this.passwordData} type="password" name="password" placeholder="Hasło"></input><br/>
+                                 <p class="error-message">Błędne hasło lub login</p>
+                                 <button id="login-button" type="button" onClick={this.formPost}>Zaloguj</button>
+                             </div>
+                    </div>
+                    </div> 
+                </form>
+                {this.state.loggedin == "admin" ? <Admin handleCloseButton={this.handleCloseButton}/> : <></>}
+                </>
+             );
          }
      }
 
