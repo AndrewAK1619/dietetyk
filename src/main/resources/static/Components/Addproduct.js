@@ -20,6 +20,7 @@ class Addproduct extends React.Component {
         let protein = this.state.newProductProteins;
         let carbohydrate = this.state.newProductCarbs;
         let fats = this.state.newProductFat;
+        let productName = this.state.productName;
     try{
         let result = fetch('/admin/products', {
             method: 'post',
@@ -28,10 +29,11 @@ class Addproduct extends React.Component {
                 'Content-type': 'application/json;charset=utf-8',
             },
             body: JSON.stringify({
-                newProductCal,
-                newProductCarbs,
-                newProductProteins,
-                newProductFat
+                kcal,
+                carbohydrate,
+                protein,
+                fats,
+                productName,
             })
         });
         console.log('Result:' + result);
