@@ -73,7 +73,8 @@ class Login extends React.Component {
         registration: false,
         loggedin: "",
     }
-    formPost = () => {
+        formPost = () => {
+        let login = this;
         let emailUser = this.state.login;
         let password = this.state.password;
     try{
@@ -89,11 +90,11 @@ class Login extends React.Component {
             })
         }).then(function(response){
             if(response.status == "404"){
-                setState({
+                login.setState({
                     loggedin: "wrong",
                 })
             }else if(response.status == "200"){
-                setState({
+                login.setState({
                     loggedin: "user",
                 })
             }
