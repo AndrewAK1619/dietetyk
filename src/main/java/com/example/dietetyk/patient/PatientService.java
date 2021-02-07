@@ -55,6 +55,10 @@ public class PatientService {
 		return mapAndSavePatient(patientDto);
 	}
 
+	void delete(Long id) {
+		patientRepository.deleteById(id);
+	}
+
 	private PatientDto mapAndSavePatient(PatientDto patient) {
 		Patient patientEntity = patientMapper.patientDtoToPatient(patient);
 		Patient savedPatient = patientRepository.save(patientEntity);
