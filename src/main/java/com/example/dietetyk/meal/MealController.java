@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/meals")
+@RequestMapping("/admin/meals")
 public class MealController {
 
     private MealService mealService;
