@@ -17,7 +17,7 @@ class Admin extends React.Component {
         let password = this.state.userpassword;
         let email = this.state.useremail;
     try{
-        let result = fetch('/account/register', {
+        let result = fetch('/admin/users/register', {
             method: 'post',
             headers: {
                 'Accept': 'application/json',

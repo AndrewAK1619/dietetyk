@@ -35,7 +35,7 @@ public class Patient implements Serializable {
 	private String firstName;
 	@Column(name = "last_name", length = 45, nullable = false)
 	private String lastName;
-	@Column(length = 45, unique = true)
+	@Column(length = 45, unique = true, nullable = false)
 	private String email;
 	@Column(length = 6, nullable = false)
 	private String sex;

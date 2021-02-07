@@ -17,10 +17,10 @@ public class UnitOfMeasuresAndWeightsService {
 		this.measuresAndWeightsRepository = measuresAndWeightsRepository;
 	}
 
-	List<String> findAllNames() {
+	List<String> findAllSymbols() {
 		return measuresAndWeightsRepository.findAll()
 				.stream()
-				.map(UnitOfMeasuresAndWeights::getUnit)
+				.map(UnitOfMeasuresAndWeights::getSymbol)
 				.collect(Collectors.toList());
 	}
 }

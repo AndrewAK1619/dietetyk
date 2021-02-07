@@ -19,8 +19,8 @@ public class PhysicalActivityController {
 		this.activityService = activityService;
 	}
 
-	@GetMapping("/names")
-	public List<String> findAllNames() {
-		return activityService.findAllNames();
+	@GetMapping("/degree-of-activitties")
+	public List<String> findAllDegreeOfPhysicalActivities() {
+		return activityService.findAllDegreeOfPhysicalActivities();
 	}
 }

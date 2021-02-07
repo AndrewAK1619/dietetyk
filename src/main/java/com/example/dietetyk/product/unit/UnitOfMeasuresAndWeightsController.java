@@ -19,8 +19,8 @@ public class UnitOfMeasuresAndWeightsController {
 		this.measuresAndWeightsService = measuresAndWeightsService;
 	}
 
-	@GetMapping("/names")
-	public List<String> findAllNames() {
-		return measuresAndWeightsService.findAllNames();
+	@GetMapping("/symbols")
+	public List<String> findAllSymbols() {
+		return measuresAndWeightsService.findAllSymbols();
 	}
 }
