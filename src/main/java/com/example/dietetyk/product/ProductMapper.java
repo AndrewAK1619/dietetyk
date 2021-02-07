@@ -25,9 +25,9 @@ public class ProductMapper {
 
 	Product productDtoToProduct(ProductDto productDto) {
 		Product entity = modelMapper.map(productDto, Product.class);
-		Optional<UnitOfMeasuresAndWeights> unit = unitRepository
-				.findByUnit(productDto.getUnit());
-		unit.ifPresent(entity::setUnitOfMeasuresAndWeights);
+		Optional<UnitOfMeasuresAndWeights> symbol = unitRepository
+				.findBySymbol(productDto.getSymbol());
+		symbol.ifPresent(entity::setUnitOfMeasuresAndWeights);
 		return entity;
 	};
 

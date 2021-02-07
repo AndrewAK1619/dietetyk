@@ -26,18 +26,6 @@ public class UserController {
 		return userService.findAll();
 	}
 
-	@PostMapping("")
-	public ResponseEntity<?> save(@RequestBody UserDto user) {
-		if (user.getId() != null)
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
-					"Saving object can't have setted id");
-					
-		UserDto savedUser = userService.save(user);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(savedUser.getId()).toUri();
-		return ResponseEntity.created(location).body(savedUser);
-	}
-
 	@GetMapping("/{id}")
 	public ResponseEntity<UserDto> findById(@PathVariable Long id) {
 		return userService.findById(id)
@@ -45,4 +33,18 @@ public class UserController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 
+	@PostMapping("/register")
+	public ResponseEntity<?> save(@RequestBody UserDto user) {
+		if (user.getId() != null)
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+					"Saving object can't have setted id");
+					
+		UserDto savedUser = userService.save(user);
+		URI location = ServletUriComponentsBuilder
+				.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(savedUser.getId())
+				.toUri();
+		return ResponseEntity.created(location).body(savedUser);
+	}
 }

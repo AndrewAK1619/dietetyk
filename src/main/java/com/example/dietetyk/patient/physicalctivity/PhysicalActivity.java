@@ -33,7 +33,7 @@ public class PhysicalActivity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "physical_activity_id")
 	private Long id;
-	@Column(name = "degree_of_physical_activity")
+	@Column(name = "degree_of_physical_activity", unique = true, nullable = false)
 	private String degreeOfPhysicalActivity;
 	@OneToMany(mappedBy = "physicalActivity", 
 			cascade = { CascadeType.REMOVE })

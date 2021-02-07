@@ -17,7 +17,7 @@ public class PhysicalActivityService {
 		this.activityRepository = activityRepository;
 	}
 
-	List<String> findAllNames() {
+	List<String> findAllDegreeOfPhysicalActivities() {
 		return activityRepository.findAll()
 				.stream()
 				.map(PhysicalActivity::getDegreeOfPhysicalActivity)

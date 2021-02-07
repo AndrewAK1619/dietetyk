@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UnitOfMeasuresAndWeightsRepository extends JpaRepository<UnitOfMeasuresAndWeights, Long> {
 
-	Optional<UnitOfMeasuresAndWeights> findByUnit(String unit);
+	Optional<UnitOfMeasuresAndWeights> findBySymbol(String symbol);
 }

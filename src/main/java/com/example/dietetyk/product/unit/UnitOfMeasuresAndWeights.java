@@ -33,9 +33,9 @@ public class UnitOfMeasuresAndWeights implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "unit_id")
 	private Long id;
-	@Column(length = 40, nullable = false)
+	@Column(length = 40, unique = true, nullable = false)
 	private String unit;
-	@Column(length = 5, nullable = false)
+	@Column(length = 5, unique = true, nullable = false)
 	private String symbol;
 	@OneToMany(mappedBy = "unitOfMeasuresAndWeights", 
 			cascade = { CascadeType.REMOVE })
