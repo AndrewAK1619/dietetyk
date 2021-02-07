@@ -45,6 +45,20 @@ public class PatientService {
 		return mapAndSavePatient(patient);
 	}
 
+	PatientDto update(PatientDto patientDto) {
+		Optional<Patient> patientById = patientRepository.findById(patientDto.getId());
+		patientById.ifPresent(u -> {
+			if (!u.getId().equals(patientDto.getId()))
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, 
+						"The patient is not found");
+		});
+		return mapAndSavePatient(patientDto);
+	}
+
+	void delete(Long id) {
+		patientRepository.deleteById(id);
+	}
+
 	private PatientDto mapAndSavePatient(PatientDto patient) {
 		Patient patientEntity = patientMapper.patientDtoToPatient(patient);
 		Patient savedPatient = patientRepository.save(patientEntity);
