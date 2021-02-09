@@ -14,6 +14,19 @@ class AddPatient extends React.Component {
         medicine:"",
         alergies:"",
     }
+    componentDidMount() {
+        this.activitiesGet = () => {
+            fetch("/admin/patients/activities/degree-of-activitties",{
+                method: 'get',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json;cahrset=utf-8',
+                }
+            }).then(function(response){
+                console.log(response);
+            })
+        }
+    }
     formPost = () => {
         let firstName = this.state.patientName;
         let lastName = this.state.patientSurname;
@@ -83,10 +96,12 @@ class AddPatient extends React.Component {
                          <input type="radio" onChange={this.handleForm} id="female" name="patientSex" value="kobieta"></input>
                          <label for="female">Kobieta</label>      
                         <select onChange={this.handleSelect} class="select-styling">
-                            <option value="Aktywność fizyczna">Aktywność fizyczna</option>
-                            <option value="Słaba">Słaba</option>
-                            <option value="Umiarkowana">Umiarkowana</option>
-                            <option value="Częsta">Częsta</option>
+                            <option value="1 - Pacjent leżący w łóżku">1 - Pacjent leżący w łóżku</option>
+                            <option value="2 - Aktywność fizyczna niska">Słaba</option>
+                            <option value="3 - Aktywność fizyczna umiarkowana">3 - Aktywność fizyczna umiarkowana</option>
+                            <option value="4 - Aktywny tryb życia">4 - Aktywny tryb życia</option>
+                            <option value="5 - Bardzo aktywny tryb życia">5 - Bardzo aktywny tryb życia</option>
+                            <option value="6 - Wyczynowe uprawianie sportu">6 - Wyczynowe uprawianie sportu</option>
                         </select><br/>
                         <button id="login-button" onClick={this.formPost} type="button">Dodaj</button>
                     </div>

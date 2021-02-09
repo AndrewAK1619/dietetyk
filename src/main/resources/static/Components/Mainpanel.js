@@ -59,11 +59,12 @@ class Mainpanel extends React.Component {
                     </header>
                     {this.state.settings == false ? <div></div> : <div id="settings-popup">
                         <ul id="settings-menu">
-                            <li>Konto</li>
+                            <li onClick={this.handleAdd} id="account">Konto</li>
                             <li>Diety</li>
                             <li onClick={this.logout}>Wyloguj</li>
                         </ul>
                     </div>}
+                    {this.state.whichwindow == "account" ? <Accountsettings handleCloseButton={this.handleCloseButton}/> : <></>}
                     {this.state.whichwindow == "newpatient" ? <AddPatient handleCloseButton={this.handleCloseButton}/> : <></>}
                     {this.state.whichwindow == "newmeal" ? <Addmeal handleCloseButton={this.handleCloseButton}/> : <></>}
                     {this.state.whichwindow == "newmenu" ? <Addmenu handleCloseButton={this.handleCloseButton}/> : <></>}
