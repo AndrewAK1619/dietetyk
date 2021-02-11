@@ -11,7 +11,10 @@ class Accountsettings extends React.Component{
                 </div>
                 <div id="row">
                     <div class="settings">
-                        ZDJĘCIE PROFILOWE
+                        <span class="heading">ZDJĘCIE PROFILOWE</span>
+                        <div class="account-image">
+                            <img src="img/user.png"></img>
+                        </div>
                     </div>
                     <div class="settings"></div>
                     <div class="settings"></div>
