@@ -13,6 +13,7 @@ class AddPatient extends React.Component {
         physicalActivity: "",
         medicine:"",
         alergies:"",
+        supplementsUsed: "",
     }
     componentDidMount() {
         this.activitiesGet = () => {
@@ -38,6 +39,7 @@ class AddPatient extends React.Component {
         let degreeOfPhysicalActivity = this.state.physicalActivity;
         let chronicDiseasesAilmentsAndMedicinesUsed = this.state.medicine;
         let allergiesAndFoodIntolerances = this.state.alergies;
+        let supplementsUsed = this.state.supplementsUsed;
 
     try{
         let result = fetch('/admin/patients', {
@@ -57,6 +59,7 @@ class AddPatient extends React.Component {
                 degreeOfPhysicalActivity,
                 chronicDiseasesAilmentsAndMedicinesUsed,
                 allergiesAndFoodIntolerances,
+                supplementsUsed,
             })
         });
         console.log('Result:' + result);
@@ -91,13 +94,14 @@ class AddPatient extends React.Component {
                         <input class="form-styling" onChange={this.handleForm} type="text" name="patientOld" placeholder="Wiek"></input><br/>
                         <input class="form-styling" onChange={this.handleForm} type="text" name="medicine" placeholder="Przyjmowane leki"></input>
                         <input class="form-styling" onChange={this.handleForm} type="text" name="alergies" placeholder="Alergie, choroby, nietolerancje"></input><br/>
+                        <input class="form-styling" onChange={this.handleForm} type="text" name="supplementsUsed" placeholder="Suplementy"></input><br/>
                         <input style={marginTop} type="radio" onChange={this.handleForm} id="male" name="patientSex" value="mężczyzna"></input>
                          <label for="male">Mężczyzna</label>
                          <input type="radio" onChange={this.handleForm} id="female" name="patientSex" value="kobieta"></input>
                          <label for="female">Kobieta</label>      
                         <select onChange={this.handleSelect} class="select-styling">
                             <option value="1 - Pacjent leżący w łóżku">1 - Pacjent leżący w łóżku</option>
-                            <option value="2 - Aktywność fizyczna niska">Słaba</option>
+                            <option value="2 - Aktywność fizyczna niska">2 - Aktywność fizyczna niska</option>
                             <option value="3 - Aktywność fizyczna umiarkowana">3 - Aktywność fizyczna umiarkowana</option>
                             <option value="4 - Aktywny tryb życia">4 - Aktywny tryb życia</option>
                             <option value="5 - Bardzo aktywny tryb życia">5 - Bardzo aktywny tryb życia</option>
