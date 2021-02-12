@@ -13,6 +13,9 @@ class Accountsettings extends React.Component{
                     <div class="settings">
                         <span class="heading">ZDJĘCIE PROFILOWE</span>
                         <div class="account-image">
+                            <form>
+                            <input type="file" id="image" name="account-image">Zmień</input>
+                            </form>
                             <img src="img/user.png"></img>
                         </div>
                     </div>
