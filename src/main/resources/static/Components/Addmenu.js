@@ -29,7 +29,7 @@ class Addmenu extends React.Component{
                     <select class="select-styling-2">
                         <option>Pacjent Pacjent</option>
                     </select>
-                    <button id="save-button" type="button">Zapisz</button>
+                    <button id="save-button" type="button">Wygeneruj dietę</button>
                     <div class="close-button" onClick={this.props.handleCloseButton}>&#10006;</div>
                 </div>
                 <div id="main-workspace">

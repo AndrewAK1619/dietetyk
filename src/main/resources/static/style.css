@@ -87,6 +87,18 @@ box-shadow: 0px 0px 6px 0.5px rgba(0,0,0,0.75);
 /*Login-Form styles*/
 
 /*Mainpanel.js styles*/
+.work-data{
+  overflow-y: scroll;
+  margin-top:20px;
+  height: 80%;
+}
+.work-data span{
+  line-height: 7vh;
+}
+.work-data span:hover{
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
 #father{
   height: 100%;
 }
@@ -551,6 +563,8 @@ header{
 }
 .heading{
   color:#77914a;
+  margin-top: 50px;
+  font-weight: 700;
 }
 .account-image{
   width: 200px;
@@ -566,5 +580,17 @@ header{
 .account-image img{
   width: 100%;
   height: auto;
+}
+#picture-chosing{
+  margin-top: 100px;
+}
+#new-password{
+  margin-top:100px;
+}
+#continue{
+  margin-top: 25px;
+}
+#payment-buttons{
+  margin-top: 80px;
 }
 /*Accountsettings.js*/

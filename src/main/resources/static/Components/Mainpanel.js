@@ -74,20 +74,77 @@ class Mainpanel extends React.Component {
                                 <div class="tile-name">Pacjenci</div>
                                 <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
                                 <div class="work-data">
-
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
                                 </div>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Jadłospisy</div>
                                 <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
+                                <div class="work-data">
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                </div>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Potrawy</div>
                                 <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
+                                <div class="work-data">
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                </div>
                             </div>
                             <div class="tiles">
                                 <div class="tile-name">Produkty</div>
                                 <input class="form-styling" type="text" placeholder="Wyszukaj"></input><br/>
+                                <div class="work-data">
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                    <span>Jan Kowalski</span><br/>
+                                </div>
                             </div>
                         </div>
                 </div>
